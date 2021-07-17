@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum PhoneCategory {
+  HOME = 0;
+  MOBILE = 1;
+}
+
+message UserCreateRequest {
+  string email_address = 1;
+  string first_name = 2;
+  string last_name = 3;
+  PhoneCategory phone_category = 4;
+  string phone = 5;
+  google.protobuf.Timestamp birthday = 6;
+  int32 age = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message UserSummary {
+  string email_address = 1;
+  string name = 2;
+  bool success = 3;
+}
+
+service AddUser {
+  rpc Add (UserCreateRequest) returns (UserSummary);
+}

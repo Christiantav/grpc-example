@@ -1,0 +1,13 @@
+#form-page {
+  text-align: -webkit-center;
+}
+
+.user-input {
+  display: block;
+  margin-top: .5%
+}
+
+#submit-button {
+  display: block;
+  margin-top: .5%
+}
